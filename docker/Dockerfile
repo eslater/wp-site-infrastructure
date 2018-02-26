@@ -25,7 +25,7 @@ RUN { \
 		echo 'opcache.enable_cli=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
-RUN a2enmod rewrite expires
+RUN a2enmod alias authz_host deflate dir expires headers mime rewrite log_config autoindex negotiation setenvif
 
 VOLUME /var/www/html
 
