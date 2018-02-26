@@ -32,7 +32,7 @@ VOLUME /var/www/html
 ADD wp-content /var/www/html/wp-content
 
 ENV WORDPRESS_VERSION 4.9.4
-ENV WORDPRESS_SHA1 892d2c23b9d458ec3d44de59b753adb41012e903
+ENV WORDPRESS_SHA1 0e630bf940fd586b10e099cd9195b3e825fb194c
 
 RUN set -ex; \
 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; \
