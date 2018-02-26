@@ -29,7 +29,7 @@ RUN a2enmod alias authz_host deflate dir expires headers mime rewrite autoindex 
 
 VOLUME /var/www/html
 
-ADD wp-content /var/www/html/wp-content
+ADD html /var/www/html
 
 ENV WORDPRESS_VERSION 4.9.4
 ENV WORDPRESS_SHA1 0e630bf940fd586b10e099cd9195b3e825fb194c
