@@ -30,6 +30,8 @@ RUN a2enmod alias authz_host deflate dir expires headers mime rewrite autoindex 
 VOLUME /var/www/html
 
 ADD html /var/www/html
+RUN set -ex; \
+	chown -R www-data:www-data /var/www/html/
 
 ENV WORDPRESS_VERSION 4.9.4
 ENV WORDPRESS_SHA1 0e630bf940fd586b10e099cd9195b3e825fb194c
@@ -40,8 +42,7 @@ RUN set -ex; \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 	tar -xzf wordpress.tar.gz -C /usr/src/; \
 	rm wordpress.tar.gz; \
-	chown -R www-data:www-data /usr/src/wordpress; \
-	chown -R www-data:www-data /var/www/html
+	chown -R www-data:www-data /usr/src/wordpress
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
