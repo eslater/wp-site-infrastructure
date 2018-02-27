@@ -40,7 +40,7 @@ RUN set -ex; \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 	tar -xzf wordpress.tar.gz -C /usr/src/; \
 	rm wordpress.tar.gz; \
-	chown -r www-data:www-data /usr/src/wordpress
+	chown -r www-data:www-data /usr/src/wordpress; \
 	chown -r www-data:www-data /var/www/html
 
 COPY docker-entrypoint.sh /usr/local/bin/
